@@ -1,0 +1,6 @@
+# Aider Configuration for Multi-Agent Workflow
+read:
+  - AGENT_RULES.md
+  - Work_log.md
+  - Tabla.md
+  - Working_fall.md
