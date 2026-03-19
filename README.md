@@ -1,10 +1,10 @@
-<div align="center">
+i<div align="center">
   <h1>🚀 AI Agent Work Setup & Coordination Protocol</h1>
   <p><b>A hierarchical multi-agent autonomous environment hosted in Antigravity IDE.</b></p>
 
-  <img src="https://img.shields.io/badge/Status-Active-success"/> 
-  <img src="https://img.shields.io/badge/Environment-Antigravity_IDE-blue"/>
-  <img src="https://img.shields.io/badge/Agents-Gemini%20|%20Qwen%20|%20Aider-orange"/>
+  ![Status](https://img.shields.io/badge/Status-Active-success) 
+  ![Environment](https://img.shields.io/badge/Environment-Antigravity_IDE-blue)
+  ![Agents](https://img.shields.io/badge/Agents-Gemini%20%7C%20Qwen%20%7C%20Aider-orange)
 </div>
 
 ---
@@ -43,11 +43,102 @@ To ensure smooth operations, this repository enforces a document-driven workflow
 * `Working_fall.md` - A registry of "Lessons Learned" (concise sentences of known bugs/issues format).
 * `.aider.conf.yml` - Configuration to force Aider to read the coordination files.
 
-## 🚀 How to Use
+## 🚀 Quick Setup & Installation
 
-1. **Clone this repository** into your local workspace.
-2. Start **Antigravity IDE** in this directory.
-3. Launch your primary planner (e.g. Gemini CLI) and say:
+### Prerequisites
+- Python 3.8+ installed
+- Git installed
+- API keys for your preferred AI services
+
+### 1. Clone & Setup
+```bash
+git clone <your-repo-url>
+cd AI-Agent-Work-Setup
+```
+
+### 2. Environment Setup
+```bash
+# Create virtual environment
+python3 -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### 3. Configure API Keys
+```bash
+# Copy example environment file
+cp .env.example .env
+
+# Edit .env with your API keys
+nano .env  # or your preferred editor
+```
+
+### 4. Launch Agents
+```bash
+# Start Gemini (Manager)
+python3 scripts/gemini_cli.py
+
+# Start Qwen (Developer) 
+python3 scripts/qwen_wrapper.py
+
+# Start Aider (Editor)
+python3 scripts/aider_wrapper.py
+
+# Start Open Interpreter (Tester)
+python3 scripts/open_interpreter_wrapper.py
+```
+
+## 📋 Required API Keys
+
+Add these to your `.env` file:
+
+```env
+# Primary Gemini keys
+GEMINI_API_KEY=your_gemini_key_here
+GEMINI_KEY_1=your_gemini_key_here
+
+# Alternative providers
+OPENAI_API_KEY=your_openai_key_here
+GROQ_API_KEY=your_groq_key_here
+OPENROUTER_API_KEY=your_openrouter_key_here
+```
+
+## 🔧 Troubleshooting
+
+### Common Issues
+- **Python version conflicts**: Use Python 3.8-3.12
+- **Virtual env issues**: Delete `.venv` and recreate
+- **API key errors**: Check `.env` file formatting
+- **Permission errors**: Ensure script execute permissions
+
+### Quick Fix Commands
+```bash
+# Reset environment
+rm -rf .venv && python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+
+# Make scripts executable
+chmod +x scripts/*.py
+
+# Check Python version
+python3 --version
+```
+
+## 📊 Project Status
+
+- ✅ **Multi-Agent Coordination Protocol** - Implemented
+- ✅ **Hierarchical Command Structure** - Active
+- ✅ **Centralized Logging System** - Operational
+- ✅ **Automated Environment Setup** - Ready
+- ✅ **Cross-Platform Compatibility** - Verified
+
+---
+
+<div align="center">
+  <p><b>Built for Antigravity IDE • Multi-Agent Autonomous Environment</b></p>
+  <p>⚡ <i>Streamlined AI Agent Collaboration Protocol</i> ⚡</p>
+</div>
    > *"Read `AGENT_RULES.md`, check `Work_log.md`, and assign the first task to Qwen."*
 4. Open sub-terminals for Qwen, Aider, or Open Interpreter. The rules in this repo will naturally force them to collaborate smoothly.
 

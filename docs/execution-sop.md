@@ -20,55 +20,31 @@ This SOP defines the exact steps to follow for every task, every day. No improvi
 
 ## Per-Task Execution Steps
 
-### Step 1 — INTAKE (Gemini)
+### Step 1 — INTAKE
 ```
-- Fill Task Intake Template
-- Get Gemini approval
-- Log in Work_log.md: "TASK-XXX INTAKE APPROVED — [timestamp] — Gemini"
-```
-
-### Step 2 — PLANNING (Gemini)
-```
-- Break into subtasks
-- Prepare Gate 1 handoff package
-- Run: python3 judge_guard.py --action "Start TASK-XXX BUILD phase"
-- If EXIT 0 → proceed to Qwen
-- If EXIT 1 → HALT, fix issue first
-- Log in Work_log.md: "TASK-XXX GATE 1 PASSED — [timestamp] — Gemini"
+- Fill Task Intake Template (`docs/task-intake-template.md` or similar)
+- Save the filled template locally.
+- Validate scope clarity (no ambiguity)
+- Assign priority: HIGH / MEDIUM / LOW
 ```
 
-### Step 3 — BUILD (Qwen)
+### Step 2 — AUTOMATED EXECUTION
 ```
-- Receive Gate 1 package from Gemini
-- Execute implementation
-- Write self-check summary
-- Prepare Gate 2 handoff
-- Run: python3 judge_guard.py --action "Verify TASK-XXX BUILD Complete"
-- Log in Work_log.md: "TASK-XXX GATE 2 READY — [timestamp] — Qwen"
-```
-
-### Step 4 — REVIEW (Aider)
-```
-- Receive Gate 2 package from Qwen
-- Review and refactor code
-- Write change list and review summary
-- Prepare Gate 3 handoff
-- Log in Work_log.md: "TASK-XXX GATE 3 READY — [timestamp] — Aider"
+- Run the orchestrator script with your task ID and intake file:
+  python3 scripts/orchestrator.py --task-id "TASK-001" --intake "docs/task-001-intake.md"
+- The Orchestrator will automatically:
+  1. Record start phases in WORK_LOG.md
+  2. Query Gemini for GATE 1 (PLANNING)
+  3. Query Qwen/AI for GATE 2 (BUILD)
+  4. Query Aider/AI for GATE 3 (REVIEW)
+  5. Query Open Interpreter/AI for GATE 4 (VALIDATE)
 ```
 
-### Step 5 — VALIDATE (Open Interpreter)
+### Step 3 — CLOSE
 ```
-- Receive Gate 3 package from Aider
-- Execute tests and record evidence
-- Write Gate 4 document
-- Issue recommendation: ACCEPT / REWORK / REJECT
-- Log in Work_log.md: "TASK-XXX GATE 4 — [PASS/FAIL] — [timestamp] — OI"
-```
-
-### Step 6 — CLOSE
-```
+- Review the generated Gate 4 validation file in `logs/[TASK-ID]/`
 - If ACCEPTED: log metrics in /logs/run-log.csv
-- If REWORK: return to BUILD (++iteration counter)
+- If REWORK: return to input intake and run again (++iteration counter)
 - If REJECT: document reason, escalate to Gemini
 - Git commit: git commit -m "checkpoint: TASK-XXX [ACCEPTED/REWORK/REJECTED]"
 ```

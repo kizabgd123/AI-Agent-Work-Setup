@@ -1,0 +1,75 @@
+# Test files
+test_*.py
+test_*.csv
+*_test.py
+*_test.csv
+benchmark_results.csv
+csv_processor.py
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Aider
+.aider*
+
+# Node.js (if any)
+node_modules/
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Git
+.gitignore.local
+
+# AI Agent specific
+.gemini/
+.cache/
+*.pyc
+__pycache__/

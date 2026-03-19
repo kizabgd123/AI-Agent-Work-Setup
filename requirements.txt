@@ -1,0 +1,7 @@
+python-dotenv>=1.2.2
+google-generativeai>=0.8.6
+
+# Optional tools (install manually if desired):
+# - aider-chat (for aide wrapper)
+# - open-interpreter (for Open Interpreter wrapper)
+# - qwen (NodeJS CLI for Qwen wrapper)

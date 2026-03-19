@@ -1,0 +1,48 @@
+2026-03-19 06:08:33,048 - INFO - Self-Healing Installer initialized
+2026-03-19 06:08:33,048 - INFO - Package: aider-chat
+2026-03-19 06:08:33,048 - INFO - Python: 3.12.3
+2026-03-19 06:08:33,048 - INFO - OS: Linux 6.8.0-106-generic (x86_64)
+2026-03-19 06:08:33,048 - INFO - 
+######################################################################
+2026-03-19 06:08:33,048 - INFO - # Starting Self-Healing Installation for aider-chat
+2026-03-19 06:08:33,049 - INFO - ######################################################################
+
+2026-03-19 06:08:33,049 - INFO - 
+[PHASE 1] Standard Installation Attempt
+2026-03-19 06:08:33,049 - INFO - 
+============================================================
+2026-03-19 06:08:33,049 - INFO - Attempting: Standard installation: pip install aider-chat
+2026-03-19 06:08:33,049 - INFO - ============================================================
+2026-03-19 06:08:33,049 - INFO - Running command: /home/kizabgd/NOVOOOOOOOOOOOOOOOOOOOOOOOO/AI-Agent-Work-Setup/.venv/bin/python3 -m pip install aider-chat
+2026-03-19 06:10:33,069 - ERROR - Command timed out after 120 seconds
+2026-03-19 06:10:33,070 - ERROR - FAILED: Standard installation: pip install aider-chat
+2026-03-19 06:10:33,071 - ERROR - Detected error types: ['network_error']
+2026-03-19 06:10:33,071 - INFO - 
+[PHASE 2] Error Analysis and Solution Search
+2026-03-19 06:10:33,072 - INFO - Detected error types: ['network_error']
+2026-03-19 06:10:33,072 - INFO - 
+Search queries that would be used:
+2026-03-19 06:10:33,072 - INFO -   - pip install aider-chat network_error error solution Python 3.12.3
+2026-03-19 06:10:33,072 - INFO -   - aider-chat installation Linux 6.8.0-106-generic (x86_64) Python 3.12.3 workaround
+2026-03-19 06:10:33,072 - INFO -   - aider-chat compatible version Python 3.12.3
+2026-03-19 06:10:33,072 - INFO - 
+[PHASE 3] Alternative Installation Approaches
+2026-03-19 06:10:33,072 - INFO - 
+--- Approach 1: Trying Different Versions ---
+2026-03-19 06:10:35,203 - INFO - 
+Trying version: 0.54.4
+2026-03-19 06:10:35,203 - INFO - 
+============================================================
+2026-03-19 06:10:35,203 - INFO - Attempting: Specific version: pip install aider-chat==0.54.4
+2026-03-19 06:10:35,203 - INFO - ============================================================
+2026-03-19 06:10:35,203 - INFO - Running command: /home/kizabgd/NOVOOOOOOOOOOOOOOOOOOOOOOOO/AI-Agent-Work-Setup/.venv/bin/python3 -m pip install aider-chat==0.54.4
+2026-03-19 06:12:35,282 - ERROR - Command timed out after 120 seconds
+2026-03-19 06:12:35,323 - ERROR - FAILED: Specific version: pip install aider-chat==0.54.4
+2026-03-19 06:12:35,323 - ERROR - Detected error types: ['network_error']
+2026-03-19 06:12:35,323 - INFO - 
+Trying version: 0.24.1
+2026-03-19 06:12:35,323 - INFO - 
+============================================================
+2026-03-19 06:12:35,324 - INFO - Attempting: Specific version: pip install aider-chat==0.24.1
+2026-03-19 06:12:35,324 - INFO - ============================================================
+2026-03-19 06:12:35,324 - INFO - Running command: /home/kizabgd/NOVOOOOOOOOOOOOOOOOOOOOOOOO/AI-Agent-Work-Setup/.venv/bin/python3 -m pip install aider-chat==0.24.1

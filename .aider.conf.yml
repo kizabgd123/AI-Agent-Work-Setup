@@ -1,6 +1,29 @@
 # Aider Configuration for Multi-Agent Workflow
+
+# Always read coordination files
 read:
   - AGENT_RULES.md
   - Work_log.md
   - Tabla.md
   - Working_fall.md
+
+# Auto-commit settings
+auto-commits: true
+dirty-commits: true
+watch-files: true
+
+# Model configuration (will use API keys from environment)
+# Supported: GEMINI_API_KEY, OPENAI_API_KEY, GROQ_API_KEY, ANTHROPIC_API_KEY
+
+# Git settings
+git: true
+attribute-author: true
+attribute-committer: true
+
+# Message settings
+show-diffs: true
+
+# Memory and performance settings
+max-chat-history: 50
+map-tokens: 4096
+model: groq/llama3-70b-8192
