@@ -1,0 +1,1 @@
+task_id,date,agent_build,agent_review,agent_validate,defect_rate,human_intervention,context_loss,handoff_score,test_pass_rate,cycle_time_gemini_min,cycle_time_qwen_min,cycle_time_aider_min,cycle_time_oi_min,total_rework_count,final_status,notes
